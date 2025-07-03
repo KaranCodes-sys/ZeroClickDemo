@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ZeroClick Color Palette and Design System */
+@layer base {
+  :root {
+    /* ZeroClick Colors */
+    --peach-bg: #FFF8F0;
+    --soft-orange: #F4A261;
+    --mint-green: #2A9D8F;
+    --sun-yellow: #E9C46A;
+    --deep-blue: #264653;
+    --warm-red: #E76F51;
+    --light-blue: #A8DADC;
+    
+    /* Accessibility Colors */
+    --success: #2A9D8F;
+    --warning: #E9C46A;
+    --danger: #E76F51;
+    --info: #A8DADC;
+    
+    /* Standard shadcn colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--peach-bg);
+    color: var(--deep-blue);
+  }
+}
+
+/* ZeroClick specific styles */
+.zeroclick-gradient {
+  background: linear-gradient(135deg, var(--peach-bg) 0%, #FFF5E6 100%);
+}
+
+.feature-card {
+  @apply bg-white rounded-3xl shadow-lg p-6 m-2 transition-all duration-300 hover:shadow-xl hover:scale-105;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, var(--soft-orange), var(--mint-green)) border-box;
+}
+
+.mic-button {
+  @apply rounded-full shadow-2xl transition-all duration-300 active:scale-95;
+  background: linear-gradient(135deg, var(--soft-orange) 0%, var(--sun-yellow) 100%);
+  animation: pulse 2s infinite;
+}
+
+.sos-button {
+  @apply rounded-full shadow-2xl transition-all duration-300 active:scale-95;
+  background: linear-gradient(135deg, var(--warm-red) 0%, #f80202e1 100%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(252, 114, 1, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(227, 107, 9, 0); }
+}
+
+.text-accent {
+  color: var(--soft-orange);
+}
+
+.bg-accent {
+  background-color: var(--soft-orange);
+}
+
+.text-deep-blue {
+  color: var(--deep-blue);
+}
+
+.bg-mint {
+  background-color: var(--mint-green);
+}
+
+.bg-sun-yellow {
+  background-color: var(--sun-yellow);
+}
+
+.reminder-card {
+  @apply bg-white rounded-2xl p-4 mb-3 shadow-md border-l-4;
+}
+
+.reminder-medicine {
+  border-left-color: var(--mint-green);
+}
+
+.reminder-call {
+  border-left-color: var(--light-blue);
+}
+
+.reminder-yoga {
+  border-left-color: var(--sun-yellow);
+}
